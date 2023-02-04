@@ -1,11 +1,11 @@
-import React from 'react';
 import { Box } from '@mui/material';
 
-interface Children {
-  children: React.ReactNode | JSX.Element | JSX.Element[];
-}
+import type { Children } from '../types';
 
-export const MainContent = ({ children }: Children) => (
+/**
+ * Main Container
+ */
+export const Container = ({ children }: Children) => (
   <Box
     component="main"
     sx={{ display: 'flex', height: '100%', width: '100%', mt: 12 }}

@@ -6,11 +6,17 @@ import {
 } from 'react-router-dom';
 import Tab from '@mui/material/Tab';
 
+/**
+ * Link Tab Props
+ */
 interface LinkTabProps {
   label: string;
   href: string;
 }
 
+/**
+ * Link Tab
+ */
 export const LinkTab = ({ label, href, ...props }: LinkTabProps) => {
   const navigate = useNavigate();
   return (
@@ -27,7 +33,7 @@ export const LinkTab = ({ label, href, ...props }: LinkTabProps) => {
 };
 
 /**
- * Button Link Props
+ * Router Link Tab Props
  */
 interface RouterLinkTabProps {
   label: string;
@@ -35,6 +41,9 @@ interface RouterLinkTabProps {
   onClick?: React.MouseEventHandler<HTMLAnchorElement> | undefined;
 }
 
+/**
+ * React Router Link Tab
+ */
 export const RouterLinkTab = ({ label, to, onClick }: RouterLinkTabProps) => {
   const renderLink = useMemo(
     () =>

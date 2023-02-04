@@ -1,5 +1,8 @@
 import { Box, Container, Typography, Paper } from '@mui/material';
 
+/**
+ * Contacts Page
+ */
 const ContactsPage = () => (
   <Container maxWidth="sm">
     <Box component="div">

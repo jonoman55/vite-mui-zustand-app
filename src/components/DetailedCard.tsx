@@ -19,6 +19,9 @@ import {
 
 import { ExpandMore } from './ExpandMore';
 
+/**
+ * Detailed Card Props
+ */
 interface DetailedCardProps {
   avatarLetter: string;
   avatarBgcolor: any;
@@ -28,6 +31,9 @@ interface DetailedCardProps {
   details?: string;
 }
 
+/**
+ * Detailed Card
+ */
 export const DetailedCard = ({
   avatarLetter,
   avatarBgcolor,

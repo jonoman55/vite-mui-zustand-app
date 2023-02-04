@@ -64,7 +64,7 @@ const Text = styled(Typography)(({ theme }) => ({
 }));
 
 const Loader = styled(CircularProgress)(({ theme }) => ({
-  color: theme.palette.error.main,
+  color: theme.palette.secondary.main,
 }));
 
 export const LoadingContainer = () => (

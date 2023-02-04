@@ -8,6 +8,9 @@ import {
 } from '../components';
 import useAppStore from '../store';
 
+/**
+ * Home Page
+ */
 const HomePage = () => {
   const { cardsTabValue, setCardsTabValue } = useAppStore();
 

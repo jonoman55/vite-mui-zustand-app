@@ -1,5 +1,4 @@
 import React, { useEffect, useCallback } from 'react';
-import { useLocation } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -11,10 +10,14 @@ import {
 import { DarkMode, LightMode } from '@mui/icons-material';
 
 import { RouterLinkTab as Tab } from './LinkTab';
+import { usePathname } from '../hooks';
 import useAppStore from '../store';
 
+/**
+ * Header
+ */
 const Header = () => {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   const { mode, setThemeMode, headerTabValue, setHeaderTabValue } =
     useAppStore();

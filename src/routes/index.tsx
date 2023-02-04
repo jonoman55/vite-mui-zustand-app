@@ -6,10 +6,11 @@ import {
 } from 'react-router-dom';
 
 import { Layout } from '../components';
+import type { Lazy } from '../types';
 
-const Home = lazy(() => import('../pages/HomePage'));
-const Contacts = lazy(() => import('../pages/ContactsPage'));
-const Profile = lazy(() => import('../pages/ProfilePage'));
+const Home: Lazy = lazy(() => import('../pages/HomePage'));
+const Contacts: Lazy = lazy(() => import('../pages/ContactsPage'));
+const Profile: Lazy = lazy(() => import('../pages/ProfilePage'));
 
 const Routes = () => (
   <Router>

@@ -2,15 +2,15 @@ import * as React from 'react';
 import { Box } from '@mui/material';
 
 import Header from './Header';
-import { MainContent as Container } from './MainContent';
+import { Container } from './Container';
+import type { Children } from '../types';
 
-interface Children {
-  children: React.ReactNode | JSX.Element | JSX.Element[];
-}
-
+/**
+ * Page Layout
+ */
 export const Layout = ({ children }: Children) => (
-  <Box component="div">
+  <React.Fragment>
     <Header />
     <Container>{children}</Container>
-  </Box>
+  </React.Fragment>
 );
