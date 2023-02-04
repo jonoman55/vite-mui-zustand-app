@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
   Box,
   Typography,
   Tabs,
-  Tab,
   IconButton,
 } from '@mui/material';
 import { DarkMode, LightMode } from '@mui/icons-material';
 
+import { RouterLinkTab as Tab } from './LinkTab';
 import useAppStore from '../store';
 
 const Header = () => {
+  const { pathname } = useLocation();
+
   const { mode, setThemeMode, headerTabValue, setHeaderTabValue } =
     useAppStore();
 
@@ -20,9 +23,23 @@ const Header = () => {
     setThemeMode(mode);
   };
 
-  const handleTabChange = (_e: React.SyntheticEvent, newValue: string) => {
+  const handleTabChange = (_e: React.SyntheticEvent, newValue: number) => {
     setHeaderTabValue(newValue);
   };
+
+  const handleHeaderTabChange = useCallback<() => void>(() => {
+    if (pathname === '/') {
+      setHeaderTabValue(0);
+    }
+    if (pathname === '/contacts') {
+      setHeaderTabValue(1);
+    }
+    if (pathname === '/profile') {
+      setHeaderTabValue(2);
+    }
+  }, [pathname]);
+
+  useEffect(() => handleHeaderTabChange(), [handleHeaderTabChange]);
 
   return (
     <AppBar elevation={2} variant="elevation" color="default">
@@ -60,11 +77,19 @@ const Header = () => {
             textColor="secondary"
             indicatorColor="secondary"
             variant="fullWidth"
-            aria-label="secondary tabs example"
+            aria-label="nav tabs"
           >
-            <Tab value="one" label="Albums" />
-            <Tab value="two" label="Contacts" />
-            <Tab value="three" label="Profile" />
+            <Tab label="Home" to="/" onClick={() => setHeaderTabValue(0)} />
+            <Tab
+              label="Contacts"
+              to="contacts"
+              onClick={() => setHeaderTabValue(1)}
+            />
+            <Tab
+              label="Profile"
+              to="profile"
+              onClick={() => setHeaderTabValue(2)}
+            />
           </Tabs>
         </Box>
         <Box sx={{ display: 'flex' }}>

@@ -4,8 +4,8 @@ import { persist } from 'zustand/middleware';
 import { PaletteMode } from '@mui/material';
 
 interface IAppStore {
-  headerTabValue: string;
-  setHeaderTabValue: (value: string) => any;
+  headerTabValue: number;
+  setHeaderTabValue: (value: number) => any;
   cardsTabValue: string;
   setCardsTabValue: (value: string) => any;
   mode: PaletteMode;
@@ -13,8 +13,8 @@ interface IAppStore {
 }
 
 const appStore = (set: any): IAppStore => ({
-  headerTabValue: 'one',
-  setHeaderTabValue: (value: string) => set({ headerTabValue: value }),
+  headerTabValue: 0,
+  setHeaderTabValue: (value: number) => set({ headerTabValue: value }),
   cardsTabValue: '1',
   setCardsTabValue: (value: string) => set({ cardsTabValue: value }),
   mode: 'light',

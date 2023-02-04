@@ -1,5 +1,7 @@
 export * from './Cards';
+export * from './DetailedCard';
 export * from './ExpandMore';
-
-export { default as Header } from './Header';
-export { default as DetaildCard } from './DetailedCard';
+export * from './MainContent';
+export * from './Layout';
+export * from './Lazy';
+export * from './LinkTab';

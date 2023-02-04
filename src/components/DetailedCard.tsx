@@ -28,7 +28,7 @@ interface DetailedCardProps {
   details?: string;
 }
 
-const DetailedCard = ({
+export const DetailedCard = ({
   avatarLetter,
   avatarBgcolor,
   imgSrc,
@@ -124,5 +124,3 @@ const DetailedCard = ({
     </Card>
   );
 };
-
-export default DetailedCard;
