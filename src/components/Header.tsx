@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import { DarkMode, LightMode } from '@mui/icons-material';
 
-import useAppStore from '../store/appStore';
+import useAppStore from '../store';
 
 const Header = () => {
   const { mode, setThemeMode, headerTabValue, setHeaderTabValue } =

@@ -15,7 +15,7 @@ import {
   MediaControlCard,
   RecipeReviewCard,
 } from './components/Cards';
-import useAppStore from './store/appStore';
+import useAppStore from './store';
 import { useThemeMode } from './theme';
 
 const App = () => {
