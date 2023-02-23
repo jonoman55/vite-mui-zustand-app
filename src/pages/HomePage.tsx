@@ -30,7 +30,7 @@ const HomePage = () => {
               indicatorColor="secondary"
               centered
             >
-              <Tab label="Recipies" value="1" />
+              <Tab label="Recipes" value="1" />
               <Tab label="Animals" value="2" />
               <Tab label="Music" value="3" />
             </TabList>

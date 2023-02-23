@@ -1,10 +1,12 @@
+// TODO : Add Notistack context provider and useNotify hook for toast notification
+// TODO : Finish implementing signup and signin functionality
+
 import React, { lazy, Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import { CssBaseline, ThemeProvider, Theme, PaletteMode } from '@mui/material';
+import { CssBaseline, ThemeProvider, Theme } from '@mui/material';
 
 import { ErrorFallback, LoadingContainer } from './components';
 import { useActiveTheme } from './hooks';
-import useAppStore from './store';
 
 const Routes: React.LazyExoticComponent<() => JSX.Element> = lazy(() =>
   import('./routes')

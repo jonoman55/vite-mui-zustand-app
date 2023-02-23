@@ -1,4 +1,5 @@
 import { Box, Container, Typography, Paper } from '@mui/material';
+import { UnderConstructionCard } from '../components/UnderConstruction';
 
 /**
  * Profile Page
@@ -21,6 +22,7 @@ const ProfilePage = () => (
         })}
       >
         <Typography variant="h6">Profile</Typography>
+        <UnderConstructionCard />
       </Paper>
     </Box>
   </Container>

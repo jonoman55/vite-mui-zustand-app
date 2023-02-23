@@ -40,6 +40,12 @@ const Header = () => {
     if (pathname === '/profile') {
       setHeaderTabValue(2);
     }
+    if (pathname === '/signup') {
+      setHeaderTabValue(3);
+    }
+    if (pathname === '/signin') {
+      setHeaderTabValue(4);
+    }
   }, [pathname]);
 
   useEffect(() => handleHeaderTabChange(), [handleHeaderTabChange]);
@@ -82,7 +88,11 @@ const Header = () => {
             variant="fullWidth"
             aria-label="nav tabs"
           >
-            <Tab label="Home" to="/" onClick={() => setHeaderTabValue(0)} />
+            <Tab
+              label="Home"
+              to="/"
+              onClick={() => setHeaderTabValue(0)}
+            />
             <Tab
               label="Contacts"
               to="contacts"
@@ -92,6 +102,16 @@ const Header = () => {
               label="Profile"
               to="profile"
               onClick={() => setHeaderTabValue(2)}
+            />
+            <Tab
+              label="Sign Up"
+              to="signup"
+              onClick={() => setHeaderTabValue(3)}
+            />
+            <Tab
+              label="Sign In"
+              to="signin"
+              onClick={() => setHeaderTabValue(4)}
             />
           </Tabs>
         </Box>
