@@ -1,12 +1,11 @@
-import { initialUser } from './../schemas/user';
-// DOCS : https://github.com/pmndrs/zustand
+// DOCS: https://github.com/pmndrs/zustand
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { PaletteMode } from '@mui/material';
 
-import { User } from "../schemas/user";
+import { User, initialUser } from "../schemas";
 
-interface IAppStore {
+export interface IAppStore {
   headerTabValue: number;
   setHeaderTabValue: (value: number) => any;
   cardsTabValue: string;
