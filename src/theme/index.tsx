@@ -1,7 +1,6 @@
-import { useMemo } from 'react';
-import { createTheme, Theme, ThemeOptions } from '@mui/material/styles';
-import { TypographyOptions } from '@mui/material/styles/createTypography';
 import { PaletteMode } from '@mui/material';
+import { ThemeOptions } from '@mui/material/styles';
+import { TypographyOptions } from '@mui/material/styles/createTypography';
 
 declare module '@mui/material/styles' {
   interface Theme {}
@@ -19,16 +18,9 @@ const typography: TypographyOptions = {
 /**
  * Create MUI Theme Palette Mode
  */
-const createPaletteMode = (mode: PaletteMode): ThemeOptions => ({
+export const createPaletteMode = (mode: PaletteMode): ThemeOptions => ({
   palette: {
     mode,
   },
   typography,
 });
-
-/**
- * Use Theme With Mode Hook
- */
-export const useThemeMode = (mode: PaletteMode): Theme => {
-  return useMemo(() => createTheme(createPaletteMode(mode)), [mode]);
-};

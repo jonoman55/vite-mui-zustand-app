@@ -1,5 +1,6 @@
-import React from 'react';;
-import { Avatar, Button, Box, Container, Checkbox, Typography, Grid, Link, TextField, FormControlLabel } from '@mui/material';
+import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import { Avatar, Button, Box, Container, Checkbox, Typography, Grid, TextField, FormControlLabel } from '@mui/material';
 import { LockOutlined as LockOutlinedIcon } from '@mui/icons-material/';
 
 import { Copyright } from '../components';
@@ -47,7 +48,7 @@ export default function SignUp() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          Sign Up
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
@@ -57,6 +58,7 @@ export default function SignUp() {
                 name="firstName"
                 required
                 fullWidth
+                color="secondary"
                 id="firstName"
                 label="First Name"
                 autoFocus
@@ -66,6 +68,7 @@ export default function SignUp() {
               <TextField
                 required
                 fullWidth
+                color="secondary"
                 id="lastName"
                 label="Last Name"
                 name="lastName"
@@ -76,6 +79,7 @@ export default function SignUp() {
               <TextField
                 required
                 fullWidth
+                color="secondary"
                 id="email"
                 label="Email Address"
                 name="email"
@@ -91,6 +95,7 @@ export default function SignUp() {
               <TextField
                 required
                 fullWidth
+                color="secondary"
                 name="password"
                 label="Password"
                 type="password"
@@ -105,7 +110,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                control={<Checkbox value="allowExtraEmails" color="secondary" />}
                 label="I want to receive inspiration, marketing promotions and updates via email."
               />
             </Grid>
@@ -113,6 +118,7 @@ export default function SignUp() {
           <Button
             type="submit"
             fullWidth
+            color="secondary"
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
@@ -120,9 +126,9 @@ export default function SignUp() {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Typography component={RouterLink} to="/signin" variant="body2" color="secondary">
                 Already have an account? Sign in
-              </Link>
+              </Typography>
             </Grid>
           </Grid>
         </Box>

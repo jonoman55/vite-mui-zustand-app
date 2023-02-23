@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { Avatar, Box, Button, Container, Checkbox, Grid, FormControlLabel, Typography, TextField, Link } from '@mui/material';
 import { LockOutlined as LockOutlinedIcon } from '@mui/icons-material';
 
@@ -50,7 +51,7 @@ export default function SignIn() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign In
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
@@ -105,9 +106,9 @@ export default function SignIn() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2" color="secondary">
+              <Typography component={RouterLink} to="/signup" variant="body2" color="secondary">
                 {"Don't have an account? Sign Up"}
-              </Link>
+              </Typography>
             </Grid>
           </Grid>
         </Box>

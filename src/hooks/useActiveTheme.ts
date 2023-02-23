@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
-import { Theme, PaletteMode } from '@mui/material';
+import { PaletteMode } from '@mui/material';
+import { Theme, createTheme } from '@mui/material/styles';
 
-import { useThemeMode } from '../theme';
+import { createPaletteMode } from '../theme';
 import useAppStore from '../store';
 
 /**
@@ -9,5 +10,8 @@ import useAppStore from '../store';
  */
 export const useActiveTheme = (): Theme => {
   const mode: PaletteMode = useAppStore((state) => state.mode);
-  return useThemeMode(mode);
+  return useMemo<Theme>(
+    () => createTheme(createPaletteMode(mode)),
+    [mode]
+  );
 };
